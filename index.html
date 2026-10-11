@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hidden Chapters</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Georgia,serif;background:#faf7f2;color:#302b35}
+header{text-align:center;padding:48px 18px;background:linear-gradient(135deg,#e9dff0,#f8e9dc)}
+header h1{font-size:clamp(32px,6vw,52px);margin:0 0 12px;letter-spacing:2px}
+header p{font-style:italic;line-height:1.7;margin:0}
+nav{display:flex;justify-content:center;flex-wrap:wrap;background:#fff;gap:5px;padding:12px;position:sticky;top:0;box-shadow:0 2px 10px #0001}
+nav button{border:0;background:transparent;padding:10px 12px;cursor:pointer;font-size:15px;color:#46364d}
+nav button:hover,nav button.active{background:#e9dff0;border-radius:20px}
+main{max-width:950px;margin:35px auto;padding:0 18px;min-height:300px}
+section{display:none}
+section.active{display:block}
+h2{color:#765783}
+.card{background:white;border-radius:14px;padding:22px;margin:16px 0;box-shadow:0 4px 18px #302b350c;line-height:1.8}
+input,textarea{width:100%;padding:12px;margin:8px 0;border:1px solid #d8cbdc;border-radius:8px;font:inherit}
+textarea{min-height:100px}
+.action{background:#765783;color:white;border:0;padding:11px 17px;border-radius:20px;cursor:pointer}
+.hint{font-size:14px;color:#766d78}
+footer{text-align:center;padding:25px;background:#eee5f0;line-height:1.8}
+</style>
+</head>
+<body>
+<header>
+<h1>Hidden Chapters</h1>
+<p>A little universe where words whisper, dreams bloom,<br>and every heart has a story.</p>
+</header>
+<nav>
+<button class="active" data-page="home">Home</button>
+<button data-page="pictures">Pictures</button>
+<button data-page="videos">Videos</button>
+<button data-page="bnwriting">বাংলা লেখা</button>
+<button data-page="enwriting">English Writings</button>
+<button data-page="bnpoems">বাংলা কবিতা</button>
+<button data-page="enpoems">English Poems</button>
+<button data-page="quotes">Quotes</button>
+</nav>
+<main>
+<section id="home" class="active">
+<h2>Welcome to my world ✨</h2>
+<div class="card">Some feelings are too deep for ordinary words. Some stories are waiting quietly to be told. Welcome to Hidden Chapters — a home for imagination, memories, poetry and little pieces of the soul.</div>
+<p>Choose a section above and explore.</p>
+</section>
+<section id="pictures">
+<h2>Pictures</h2><div class="card">Beautiful moments, one picture at a time.</div>
+<p class="hint">To add your own pictures, upload image files to your GitHub repository and add them to this section later.</p>
+</section>
+<section id="videos">
+<h2>Videos</h2><div class="card">A place for moments that move, memories that stay, and stories told through video.</div>
+<p class="hint">You can add your own video links here later.</p>
+</section>
+<section id="bnwriting">
+<h2>বাংলা লেখা</h2><div class="card">এখানে জমা থাকবে মনের কথা, জীবনের গল্প আর অনুভূতির ছোট ছোট অধ্যায়।</div>
+</section>
+<section id="enwriting">
+<h2>English Writings</h2><div class="card">Every thought has a place, and every story deserves to be heard.</div>
+</section>
+<section id="bnpoems">
+<h2>বাংলা কবিতা</h2><div class="card">কবিতার প্রতিটি পঙ্‌ক্তিতে লুকিয়ে থাকুক অনুভূতির রং, স্বপ্ন আর ভালোবাসার গল্প।</div>
+</section>
+<section id="enpoems">
+<h2>English Poems</h2><div class="card">In quiet lines and gentle rhyme, words capture moments lost to time.</div>
+</section>
+<section id="quotes">
+<h2>Quotes</h2>
+<div class="card">“Your story is still unfolding. Let every chapter teach you something beautiful.”</div>
+<div class="card">“শব্দ ছোট হতে পারে, কিন্তু তার অনুভূতি হতে পারে অসীম।”</div>
+</section>
+</main>
+<footer>Hidden Chapters · Every page holds a story.<br><span class="hint">Created with imagination and heart.</span></footer>
+<script>
+const buttons=document.querySelectorAll('nav button');
+const sections=document.querySelectorAll('main section');
+buttons.forEach(button=>{
+button.addEventListener('click',()=>{
+buttons.forEach(b=>b.classList.remove('active'));
+sections.forEach(s=>s.classList.remove('active'));
+button.classList.add('active');
+document.getElementById(button.dataset.page).classList.add('active');
+});
+});
+</script>
+</body>
+</html>
